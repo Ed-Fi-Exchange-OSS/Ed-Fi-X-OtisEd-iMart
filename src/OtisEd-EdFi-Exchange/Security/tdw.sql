@@ -1,0 +1,5 @@
+﻿CREATE SCHEMA [tdw]
+    AUTHORIZATION [dbo];
+
+
+

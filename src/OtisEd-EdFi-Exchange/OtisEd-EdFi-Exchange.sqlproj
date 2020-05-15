@@ -1,0 +1,283 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>OtisEd-Ed-Fi-Exchange</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{e6c77338-7e1f-4cf9-bc6d-dff8a6ccf57e}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>OtisEd.EdFi.Exchange</RootNamespace>
+    <AssemblyName>OtisEd.EdFi.Exchange</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="tdw\" />
+    <Folder Include="tdw\Tables\" />
+    <Folder Include="conform\" />
+    <Folder Include="conform\Tables\" />
+    <Folder Include="adw\" />
+    <Folder Include="adw\Tables\" />
+    <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="Security\" />
+    <Folder Include="dbo\Synonyms\" />
+    <Folder Include="edfi\" />
+    <Folder Include="edfi\Tables\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="tdw\Tables\dim_Academic_Year.sql" />
+    <Build Include="tdw\Tables\fct_Teacher_Course_Schedule.sql" />
+    <Build Include="tdw\Tables\fct_Student_Program_Participation.sql" />
+    <Build Include="tdw\Tables\fct_Student_Course_Transcript.sql" />
+    <Build Include="tdw\Tables\fct_Student_Course_Schedule.sql" />
+    <Build Include="tdw\Tables\fct_Student_Course_Grade.sql" />
+    <Build Include="tdw\Tables\fct_School_Calendar.sql" />
+    <Build Include="tdw\Tables\fct_Enrollment_Pairs.sql" />
+    <Build Include="tdw\Tables\fct_Attendance_Period_Activity.sql" />
+    <Build Include="tdw\Tables\fct_Attendance_Daily_Activity.sql" />
+    <Build Include="tdw\Tables\dim_Withdrawal.sql" />
+    <Build Include="tdw\Tables\dim_Term.sql" />
+    <Build Include="tdw\Tables\dim_Student.sql" />
+    <Build Include="tdw\Tables\dim_Staff.sql" />
+    <Build Include="tdw\Tables\dim_School.sql" />
+    <Build Include="tdw\Tables\dim_Program.sql" />
+    <Build Include="tdw\Tables\dim_Period.sql" />
+    <Build Include="tdw\Tables\dim_Marking_Period.sql" />
+    <Build Include="tdw\Tables\dim_Grade_Type.sql" />
+    <Build Include="tdw\Tables\dim_Enrollment.sql" />
+    <Build Include="tdw\Tables\dim_District.sql" />
+    <Build Include="tdw\Tables\dim_Date.sql" />
+    <Build Include="tdw\Tables\dim_Cycle_Day.sql" />
+    <Build Include="tdw\Tables\dim_Course_Section.sql" />
+    <Build Include="tdw\Tables\dim_Course.sql" />
+    <Build Include="tdw\Tables\dim_Calendar_Track.sql" />
+    <Build Include="tdw\Tables\dim_Calendar_Day_Type.sql" />
+    <Build Include="tdw\Tables\dim_Batch.sql" />
+    <Build Include="tdw\Tables\dim_Attendance.sql" />
+    <Build Include="conform\Tables\fct_Teacher_Course_Schedule.sql" />
+    <Build Include="conform\Tables\fct_Student_Program_Participation.sql" />
+    <Build Include="conform\Tables\fct_Student_Course_Transcript.sql" />
+    <Build Include="conform\Tables\fct_Student_Course_Schedule.sql" />
+    <Build Include="conform\Tables\fct_Student_Course_Grade.sql" />
+    <Build Include="conform\Tables\fct_School_Calendar.sql" />
+    <Build Include="conform\Tables\fct_Enrollment_Pairs.sql" />
+    <Build Include="conform\Tables\fct_Attendance_Period_Activity.sql" />
+    <Build Include="conform\Tables\fct_Attendance_Daily_Activity.sql" />
+    <Build Include="conform\Tables\dim_Withdrawal.sql" />
+    <Build Include="conform\Tables\dim_Term.sql" />
+    <Build Include="conform\Tables\dim_Student.sql" />
+    <Build Include="conform\Tables\dim_Staff.sql" />
+    <Build Include="conform\Tables\dim_School.sql" />
+    <Build Include="conform\Tables\dim_Program.sql" />
+    <Build Include="conform\Tables\dim_Period.sql" />
+    <Build Include="conform\Tables\dim_Marking_Period.sql" />
+    <Build Include="conform\Tables\dim_Grade_Type.sql" />
+    <Build Include="conform\Tables\dim_Enrollment.sql" />
+    <Build Include="conform\Tables\dim_District.sql" />
+    <Build Include="conform\Tables\dim_Date.sql" />
+    <Build Include="conform\Tables\dim_Cycle_Day.sql" />
+    <Build Include="conform\Tables\dim_Course_Section.sql" />
+    <Build Include="conform\Tables\dim_Course.sql" />
+    <Build Include="conform\Tables\dim_Calendar_Track.sql" />
+    <Build Include="conform\Tables\dim_Calendar_Day_Type.sql" />
+    <Build Include="conform\Tables\dim_Attendance.sql" />
+    <Build Include="conform\Tables\dim_Academic_Year.sql" />
+    <Build Include="adw\Tables\fct_Teacher_Course_Schedule.sql" />
+    <Build Include="adw\Tables\fct_Student_Program_Participation.sql" />
+    <Build Include="adw\Tables\fct_Student_Course_Transcript.sql" />
+    <Build Include="adw\Tables\fct_Student_Course_Schedule.sql" />
+    <Build Include="adw\Tables\fct_Student_Course_Grade.sql" />
+    <Build Include="adw\Tables\fct_School_Calendar.sql" />
+    <Build Include="adw\Tables\fct_Enrollment_Pairs.sql" />
+    <Build Include="adw\Tables\fct_Attendance_Period_Activity.sql" />
+    <Build Include="adw\Tables\fct_Attendance_Daily_Activity.sql" />
+    <Build Include="adw\Tables\dim_Withdrawal.sql" />
+    <Build Include="adw\Tables\dim_Term.sql" />
+    <Build Include="adw\Tables\dim_Student.sql" />
+    <Build Include="adw\Tables\dim_Staff.sql" />
+    <Build Include="adw\Tables\dim_School.sql" />
+    <Build Include="adw\Tables\dim_Program.sql" />
+    <Build Include="adw\Tables\dim_Period.sql" />
+    <Build Include="adw\Tables\dim_Marking_Period.sql" />
+    <Build Include="adw\Tables\dim_Grade_Type.sql" />
+    <Build Include="adw\Tables\dim_Enrollment.sql" />
+    <Build Include="adw\Tables\dim_District.sql" />
+    <Build Include="adw\Tables\dim_Date.sql" />
+    <Build Include="adw\Tables\dim_Cycle_Day.sql" />
+    <Build Include="adw\Tables\dim_Course_Section.sql" />
+    <Build Include="adw\Tables\dim_Course.sql" />
+    <Build Include="adw\Tables\dim_Calendar_Track.sql" />
+    <Build Include="adw\Tables\dim_Calendar_Day_Type.sql" />
+    <Build Include="adw\Tables\dim_Attendance.sql" />
+    <Build Include="adw\Tables\dim_Academic_Year.sql" />
+    <Build Include="dbo\Stored Procedures\sp_iMart_Transform_fct_Teacher_Course_Schedule_edfi.sql" />
+    <Build Include="dbo\Stored Procedures\sp_iMart_Transform_fct_Student_Program_Participation_edfi.sql" />
+    <Build Include="dbo\Stored Procedures\sp_iMart_Transform_fct_Student_Course_Transcript_edfi.sql" />
+    <Build Include="dbo\Stored Procedures\sp_iMart_Transform_fct_Student_Course_Schedule_edfi.sql" />
+    <Build Include="dbo\Stored Procedures\sp_iMart_Transform_fct_Student_Course_Grade_edfi.sql" />
+    <Build Include="dbo\Stored Procedures\sp_iMart_Transform_fct_School_Calendar_edfi.sql" />
+    <Build Include="dbo\Stored Procedures\sp_iMart_Transform_fct_Enrollment_Pairs_edfi.sql" />
+    <Build Include="dbo\Stored Procedures\sp_iMart_Transform_fct_Attendance_Period_Activity_edfi.sql" />
+    <Build Include="dbo\Stored Procedures\sp_iMart_Transform_fct_Attendance_Daily_Activity_edfi.sql" />
+    <Build Include="dbo\Stored Procedures\sp_iMart_Transform_dim_Withdrawal_edfi.sql" />
+    <Build Include="dbo\Stored Procedures\sp_iMart_Transform_dim_Term_edfi.sql" />
+    <Build Include="dbo\Stored Procedures\sp_iMart_Transform_dim_Student_edfi.sql" />
+    <Build Include="dbo\Stored Procedures\sp_iMart_Transform_dim_Staff_edfi.sql" />
+    <Build Include="dbo\Stored Procedures\sp_iMart_Transform_dim_School_edfi.sql" />
+    <Build Include="dbo\Stored Procedures\sp_iMart_Transform_dim_Program_edfi.sql" />
+    <Build Include="dbo\Stored Procedures\sp_iMart_Transform_dim_Period_edfi.sql" />
+    <Build Include="dbo\Stored Procedures\sp_iMart_Transform_dim_Marking_Period_edfi.sql" />
+    <Build Include="dbo\Stored Procedures\sp_iMart_Transform_dim_Grade_Type_edfi.sql" />
+    <Build Include="dbo\Stored Procedures\sp_iMart_Transform_dim_Enrollment_edfi.sql" />
+    <Build Include="dbo\Stored Procedures\sp_iMart_Transform_dim_District_edfi.sql" />
+    <Build Include="dbo\Stored Procedures\sp_iMart_Transform_dim_Date.sql" />
+    <Build Include="dbo\Stored Procedures\sp_iMart_Transform_dim_Cycle_Day_edfi.sql" />
+    <Build Include="dbo\Stored Procedures\sp_iMart_Transform_dim_Course_Section_edfi.sql" />
+    <Build Include="dbo\Stored Procedures\sp_iMart_Transform_dim_Course_edfi.sql" />
+    <Build Include="dbo\Stored Procedures\sp_iMart_Transform_dim_Calendar_Track_edfi.sql" />
+    <Build Include="dbo\Stored Procedures\sp_iMart_Transform_dim_Calendar_Day_Type_edfi.sql" />
+    <Build Include="dbo\Stored Procedures\sp_iMart_Transform_dim_Attendance_edfi.sql" />
+    <Build Include="dbo\Stored Procedures\sp_iMart_Transform_dim_Academic_Year_edfi.sql" />
+    <Build Include="dbo\Stored Procedures\sp_iMart_Load_fct_Teacher_Course_Schedule.sql" />
+    <Build Include="dbo\Stored Procedures\sp_iMart_Load_fct_Student_Program_Participation.sql" />
+    <Build Include="dbo\Stored Procedures\sp_iMart_Load_fct_Student_Course_Transcript.sql" />
+    <Build Include="dbo\Stored Procedures\sp_iMart_Load_fct_Student_Course_Schedule.sql" />
+    <Build Include="dbo\Stored Procedures\sp_iMart_Load_fct_Student_Course_Grade.sql" />
+    <Build Include="dbo\Stored Procedures\sp_iMart_Load_fct_School_Calendar.sql" />
+    <Build Include="dbo\Stored Procedures\sp_iMart_Load_fct_Enrollment_Pairs.sql" />
+    <Build Include="dbo\Stored Procedures\sp_iMart_Load_fct_Attendance_Period_Activity.sql" />
+    <Build Include="dbo\Stored Procedures\sp_iMart_Load_fct_Attendance_Daily_Activity.sql" />
+    <Build Include="dbo\Stored Procedures\sp_iMart_Load_dim_Withdrawal.sql" />
+    <Build Include="dbo\Stored Procedures\sp_iMart_Load_dim_Term.sql" />
+    <Build Include="dbo\Stored Procedures\sp_iMart_Load_dim_Student.sql" />
+    <Build Include="dbo\Stored Procedures\sp_iMart_Load_dim_Staff.sql" />
+    <Build Include="dbo\Stored Procedures\sp_iMart_Load_dim_School.sql" />
+    <Build Include="dbo\Stored Procedures\sp_iMart_Load_dim_Program.sql" />
+    <Build Include="dbo\Stored Procedures\sp_iMart_Load_dim_Period.sql" />
+    <Build Include="dbo\Stored Procedures\sp_iMart_Load_dim_Marking_Period.sql" />
+    <Build Include="dbo\Stored Procedures\sp_iMart_Load_dim_Grade_Type.sql" />
+    <Build Include="dbo\Stored Procedures\sp_iMart_Load_dim_Enrollment.sql" />
+    <Build Include="dbo\Stored Procedures\sp_iMart_Load_dim_District.sql" />
+    <Build Include="dbo\Stored Procedures\sp_iMart_Load_dim_Date.sql" />
+    <Build Include="dbo\Stored Procedures\sp_iMart_Load_dim_Cycle_Day.sql" />
+    <Build Include="dbo\Stored Procedures\sp_iMart_Load_dim_Course_Section.sql" />
+    <Build Include="dbo\Stored Procedures\sp_iMart_Load_dim_Course.sql" />
+    <Build Include="dbo\Stored Procedures\sp_iMart_Load_dim_Calendar_Track.sql" />
+    <Build Include="dbo\Stored Procedures\sp_iMart_Load_dim_Calendar_Day_Type.sql" />
+    <Build Include="dbo\Stored Procedures\sp_iMart_Load_dim_Attendance.sql" />
+    <Build Include="dbo\Stored Procedures\sp_iMart_Load_dim_Academic_Year.sql" />
+    <Build Include="Security\tdw.sql" />
+    <Build Include="Security\ready.sql" />
+    <Build Include="Security\discard.sql" />
+    <Build Include="Security\conform.sql" />
+    <Build Include="Security\adw.sql" />
+    <Build Include="dbo\Tables\CodeXref.sql" />
+    <Build Include="edfi\Tables\StaffEducationOrganizationAssignmentAssociation.sql" />
+    <Build Include="edfi\Tables\StaffClassificationDescriptor.sql" />
+    <Build Include="edfi\Tables\Staff.sql" />
+    <Build Include="edfi\Tables\SexDescriptor.sql" />
+    <Build Include="edfi\Tables\Session.sql" />
+    <Build Include="edfi\Tables\SectionClassPeriod.sql" />
+    <Build Include="edfi\Tables\Section.sql" />
+    <Build Include="edfi\Tables\SchoolYearType.sql" />
+    <Build Include="edfi\Tables\SchoolGradeLevel.sql" />
+    <Build Include="edfi\Tables\SchoolCategory.sql" />
+    <Build Include="edfi\Tables\School.sql" />
+    <Build Include="edfi\Tables\ProgramTypeDescriptor.sql" />
+    <Build Include="edfi\Tables\Program.sql" />
+    <Build Include="edfi\Tables\LocalEducationAgency.sql" />
+    <Build Include="edfi\Tables\GradingPeriodDescriptor.sql" />
+    <Build Include="edfi\Tables\GradingPeriod.sql" />
+    <Build Include="edfi\Tables\GradeTypeDescriptor.sql" />
+    <Build Include="edfi\Tables\Grade.sql" />
+    <Build Include="edfi\Tables\EducationOrganizationInstitutionTelephone.sql" />
+    <Build Include="edfi\Tables\EducationOrganizationIdentificationCode.sql" />
+    <Build Include="edfi\Tables\EducationOrganizationAddress.sql" />
+    <Build Include="edfi\Tables\EducationOrganization.sql" />
+    <Build Include="edfi\Tables\Descriptor.sql" />
+    <Build Include="edfi\Tables\CourseTranscript.sql" />
+    <Build Include="edfi\Tables\CourseOffering.sql" />
+    <Build Include="edfi\Tables\CourseLevelCharacteristic.sql" />
+    <Build Include="edfi\Tables\CourseIdentificationCode.sql" />
+    <Build Include="edfi\Tables\Course.sql" />
+    <Build Include="edfi\Tables\ClassPeriodMeetingTime.sql" />
+    <Build Include="edfi\Tables\ClassPeriod.sql" />
+    <Build Include="edfi\Tables\CalendarTypeDescriptor.sql" />
+    <Build Include="edfi\Tables\CalendarEventDescriptor.sql" />
+    <Build Include="edfi\Tables\CalendarDateCalendarEvent.sql" />
+    <Build Include="edfi\Tables\CalendarDate.sql" />
+    <Build Include="edfi\Tables\Calendar.sql" />
+    <Build Include="edfi\Tables\TermDescriptor.sql" />
+    <Build Include="edfi\Tables\StudentTitleIPartAProgramAssociation.sql" />
+    <Build Include="edfi\Tables\StudentSpecialEducationProgramAssociationSpecialEducationProgramService.sql" />
+    <Build Include="edfi\Tables\StudentSpecialEducationProgramAssociationDisability.sql" />
+    <Build Include="edfi\Tables\StudentSpecialEducationProgramAssociation.sql" />
+    <Build Include="edfi\Tables\StudentSectionAttendanceEvent.sql" />
+    <Build Include="edfi\Tables\StudentSectionAssociation.sql" />
+    <Build Include="edfi\Tables\StudentSchoolFoodServiceProgramAssociation.sql" />
+    <Build Include="edfi\Tables\StudentSchoolAttendanceEvent.sql" />
+    <Build Include="edfi\Tables\StudentSchoolAssociation.sql" />
+    <Build Include="edfi\Tables\StudentProgramAssociation.sql" />
+    <Build Include="edfi\Tables\StudentOtherName.sql" />
+    <Build Include="edfi\Tables\StudentEducationOrganizationAssociationStudentIdentificationCode.sql" />
+    <Build Include="edfi\Tables\StudentEducationOrganizationAssociationStudentCharacteristic.sql" />
+    <Build Include="edfi\Tables\StudentEducationOrganizationAssociationRace.sql" />
+    <Build Include="edfi\Tables\StudentEducationOrganizationAssociationLanguageUse.sql" />
+    <Build Include="edfi\Tables\StudentEducationOrganizationAssociation.sql" />
+    <Build Include="edfi\Tables\StudentAcademicRecordDiploma.sql" />
+    <Build Include="edfi\Tables\Student.sql" />
+    <Build Include="edfi\Tables\StaffSectionAssociation.sql" />
+    <Build Include="edfi\Tables\StaffSchoolAssociationGradeLevel.sql" />
+    <Build Include="edfi\Tables\StaffSchoolAssociation.sql" />
+    <Build Include="edfi\Tables\StaffIdentificationCode.sql" />
+    <Build Include="edfi\Tables\StaffElectronicMail.sql" />
+    <Build Include="Security\edfi.sql" />
+  </ItemGroup>
+</Project>

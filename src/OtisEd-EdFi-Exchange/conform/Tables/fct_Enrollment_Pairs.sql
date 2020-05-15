@@ -1,0 +1,28 @@
+﻿CREATE TABLE [conform].[fct_Enrollment_Pairs] (
+    [Academic_Year_Name]        CHAR (9)       NULL,
+    [District_Id]               VARCHAR (16)   NULL,
+    [School_Id]                 VARCHAR (16)   NULL,
+    [Calendar_Track_Cd]         VARCHAR (30)   NULL,
+    [Calendar_Track_School_Id]  VARCHAR (16)   NULL,
+    [Local_Student_Id]          VARCHAR (30)   NULL,
+    [Enrollment_Cd]             VARCHAR (30)   NULL,
+    [Enrollment-Date_Of_Day]    DATE           NULL,
+    [Withdrawal_Cd]             VARCHAR (30)   NULL,
+    [Withdrawal-Date_Of_Day]    DATE           NULL,
+    [Serving_District_Id]       VARCHAR (16)   NULL,
+    [Resident_District_Id]      VARCHAR (16)   NULL,
+    [Enrollment_Date]           DATE           NULL,
+    [Withdrawal_Date]           DATE           NULL,
+    [Enrolled_Grade_Level]      VARCHAR (30)   NULL,
+    [Current_Enrollment_Ind]    CHAR (1)       NULL,
+    [Percent_Enrolled]          DECIMAL (9, 2) NULL,
+    [Enrollment_Count]          SMALLINT       NULL,
+    [No_Show_Count]             SMALLINT       NULL,
+    [Calendar_Days_Enrolled]    SMALLINT       NULL,
+    [FullYear_Enrollment_Count] TINYINT        NULL,
+    [Batch_Period]              VARCHAR (50)   NULL,
+    [SAID]                      VARCHAR (30)   NULL,
+    [Date_Stamp]                DATETIME2 (7)  NULL,
+    [SourceIdentifier]          VARCHAR (50)   NULL
+);
+

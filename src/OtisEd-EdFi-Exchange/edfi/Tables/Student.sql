@@ -1,0 +1,26 @@
+﻿CREATE TABLE [edfi].[Student] (
+    [OES_Litho]                          BIGINT           NULL,
+    [SAID]                               VARCHAR (8)      NULL,
+    [StudentUSI]                         INT              NULL,
+    [PersonalTitlePrefix]                NVARCHAR (30)    NULL,
+    [FirstName]                          NVARCHAR (75)    NULL,
+    [MiddleName]                         NVARCHAR (75)    NULL,
+    [LastSurname]                        NVARCHAR (75)    NULL,
+    [GenerationCodeSuffix]               NVARCHAR (10)    NULL,
+    [MaidenName]                         NVARCHAR (75)    NULL,
+    [BirthDate]                          DATE             NULL,
+    [BirthCity]                          NVARCHAR (30)    NULL,
+    [DateEnteredUS]                      DATE             NULL,
+    [MultipleBirthStatus]                BIT              NULL,
+    [BirthInternationalProvince]         NVARCHAR (150)   NULL,
+    [StudentUniqueId]                    NVARCHAR (32)    NULL,
+    [Id]                                 UNIQUEIDENTIFIER NULL,
+    [LastModifiedDate]                   DATETIME         NULL,
+    [CreateDate]                         DATETIME         NULL,
+    [BirthCountryDescriptorId]           INT              NULL,
+    [BirthSexDescriptorId]               INT              NULL,
+    [BirthStateAbbreviationDescriptorId] INT              NULL,
+    [CitizenshipStatusDescriptorId]      INT              NULL,
+    [Discriminator]                      NVARCHAR (128)   NULL
+);
+

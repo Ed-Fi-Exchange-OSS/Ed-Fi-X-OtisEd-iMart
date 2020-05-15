@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.329
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "OtisEd-EdFi-Exchange", "OtisEd-EdFi-Exchange\OtisEd-EdFi-Exchange.sqlproj", "{E6C77338-7E1F-4CF9-BC6D-DFF8A6CCF57E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E6C77338-7E1F-4CF9-BC6D-DFF8A6CCF57E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6C77338-7E1F-4CF9-BC6D-DFF8A6CCF57E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6C77338-7E1F-4CF9-BC6D-DFF8A6CCF57E}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{E6C77338-7E1F-4CF9-BC6D-DFF8A6CCF57E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6C77338-7E1F-4CF9-BC6D-DFF8A6CCF57E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6C77338-7E1F-4CF9-BC6D-DFF8A6CCF57E}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EC90B847-5C6B-4B2A-A5C2-8BFA0BB9E003}
+	EndGlobalSection
+EndGlobal
